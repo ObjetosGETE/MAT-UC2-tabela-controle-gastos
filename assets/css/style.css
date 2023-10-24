@@ -1,3 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap');
+
+.conteudo {
+    width: 1920px;
+    height: 1080px;
+    position: fixed;
+    left: calc(50% - 1920px / 2);
+    top: calc(50% - 1080px / 2);
+    margin: auto;
+}
+
+.intro-controle-gastos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-controle.position-absolute {
+    background-color: white;
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px #333;
+}
+
+.header-intro-controle {
+    background-color: #F2D39A;
+    border-radius: 10px;
+    font-size: 36px;
+    font-family: 'Comic Neue', cursive;
+    font-weight: bold;
+    box-shadow: 2px 2px 15px #333;
+}
+
+.text-intro-fiscal {
+    font-size: 30px;
+    font-family: 'Calibri';
+    color: #333 !important;
+}
+
 .planilha-gastos {
     width: 100%;
     margin: 1%;
