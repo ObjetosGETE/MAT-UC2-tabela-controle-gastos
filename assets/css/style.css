@@ -28,6 +28,7 @@
     font-size: 36px;
     font-family: 'Comic Neue', cursive;
     font-weight: bold;
+    text-transform: uppercase;
     box-shadow: 2px 2px 15px #333;
 }
 
@@ -36,6 +37,71 @@
     font-family: 'Calibri';
     color: #333 !important;
 }
+
+.footer-mesa {
+    text-align: center;
+}
+
+.btn.btn-comecar {
+    display: inline-block;
+    border: 5px solid black;
+    background-color: #F8A618;
+    font-size: 36px;
+    font-family: 'Comic Neue', cursive;
+    font-weight: bold;
+    padding: 2%;
+    border-radius: 10px;
+    margin: 4%;
+    padding-inline: 10%;
+    text-transform: uppercase;
+}
+
+.btn.btn-comecar:hover {
+    background-color: #C5D742;
+    transform: scale(1.1);
+}
+
+.conteudo-controle {
+    bottom: 155px;
+    right: 143px;
+    width: 35%;
+}
+
+.organiza {
+    display: inline-block;
+    border: 5px solid black;
+    background-color: #C5D93A;
+    font-size: 36px;
+    font-family: 'Comic Neue', cursive;
+    font-weight: bold;
+    padding: 4%;
+    border-radius: 10px;
+    margin: 4%;
+    padding-inline: 10%;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.organiza:hover {
+    background-color: #F8A618;
+    transform: scale(1.1);
+}
+
+.animacao {
+    animation: go-back 1s infinite alternate;
+}
+
+@keyframes go-back {
+    from {
+        transform: translateY(20px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+
 
 .planilha-gastos {
     width: 100%;

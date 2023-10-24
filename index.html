@@ -1,471 +1,368 @@
 <!doctype html>
 <html lang="pt-br">
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Tabela Controle de gastos</title>
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-            crossorigin="anonymous">
-        <link rel="stylesheet" href="assets/css/style.css">
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tabela Controle de gastos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
 
-    <body>
-        <div class="conteudo">
-            <section class="mesa-notas">
-                <div class="intro-controle-gastos">
-                    <div class="bg-mesa position-relative"><img class="img-fluid"
-                            src="assets/img/bg-inicial.png"
-                            alt="mesa escritório com objetos"></div>
-                    <div class="intro-controle position-absolute">
-                        <div class="header-intro-controle p-5">Vamos praticar!</div>
-                        <div class="body-intro p-5">
-                            <p class="text-intro-fiscal">Você tem à sua disposição diversos cupons fiscais que coletou ao 
-                                longo de uma semana. Sabe aqueles comprovantes de gastos que 
-                                costumam se acumular em nossas carteiras e bolsas? 
-                                Chegou a  hora de dar um destino inteligente a eles!</p>
-                            <button class="btn btn-fechar"> iniciar </button>
-                        </div>
+<body>
+    <div class="conteudo">
+        <section class="mesa-notas">
+            <div class="intro-controle-gastos d-none">
+                <div class="bg-mesa position-relative"><img class="img-fluid" src="assets/img/bg-inicial.png"
+                        alt="mesa escritório com objetos"></div>
+                <div class="intro-controle position-absolute">
+                    <div class="header-intro-controle p-5">Vamos praticar!</div>
+                    <div class="body-intro p-5">
+                        <p class="text-intro-fiscal">Você tem à sua disposição diversos cupons fiscais que coletou ao
+                            longo de uma semana. Sabe aqueles comprovantes de gastos que
+                            costumam se acumular em nossas carteiras e bolsas?
+                            Chegou a hora de dar um destino inteligente a eles!</p>
                     </div>
-                </div>
-                <div class="final-controle-gastos d-none">
-                    <div class="bg-mesa"><img src alt></div>
-                    <div class="intro-controle">
-                        <p class="text-final-fiscal"></p>
-                        <button class="btn btn-fechar"></button>
-                    </div>
-                </div>
-            </section>
-            <section class="lancamento d-none">
-                <div class="planilha-gastos">
-                    <h2 class="mt-3 mb-3">​Controle de gastos pessoais diários</h2>
-                    <h3>Semana de 04/04 a 08/04 de 2022 </h3>
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-responsive-md">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Despesa</th>
-                                    <th scope="col" class="text-center">Segunda</th>
-                                    <th scope="col" class="text-center">Terça</th>
-                                    <th scope="col" class="text-center">Quarta</th>
-                                    <th scope="col" class="text-center">Quinta</th>
-                                    <th scope="col" class="text-center">Sexta</th>
-                                    <th scope="col" class="text-center">Sábado</th>
-                                    <th scope="col" class="text-center">Domingo</th>
-                                    <th scope="col" class="text-center">Total Semana</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Açougue</td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control"
-                                            id="acougue-segunda"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="acougue-terca"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="acougue-quarta"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="acougue-quinta"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="acougue-sexta"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="acougue-sabado"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control"
-                                            id="acougue-domingo"
-                                            step="0.01"></td>
-                                    <td class="text-center"><span id="total-acougue">0.00</span>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>Almoços</td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control"
-                                            id="almocos-segunda"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="almocos-terca"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="almocos-quarta"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="almocos-quinta"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="almocos-sexta"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="almocos-sabado"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control"
-                                            id="almocos-domingo"
-                                            step="0.01"></td>
-                                    <td class="text-center"><span id="total-almocos">0.00</span>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>Café e afins</td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="cafe-segunda"
-                                            step="0.01">
-                                    </td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="cafe-terca"
-                                            step="0.01">
-                                    </td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="cafe-quarta"
-                                            step="0.01">
-                                    </td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="cafe-quinta"
-                                            step="0.01">
-                                    </td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="cafe-sexta"
-                                            step="0.01">
-                                    </td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="cafe-sabado"
-                                            step="0.01">
-                                    </td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="cafe-domingo"
-                                            step="0.01">
-                                    </td>
-                                    <td class="text-center"><span id="total-cafe">0.00</span></td>
-                                </tr>
-
-                                <tr>
-                                    <td>Cinema</td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="cinema-segunda"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="cinema-terca"
-                                            step="0.01">
-                                    </td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="cinema-quarta"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="cinema-quinta"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="cinema-sexta"
-                                            step="0.01">
-                                    </td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="cinema-sabado"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="cinema-domingo"
-                                            step="0.01"></td>
-                                    <td class="text-center"><span id="total-cinema">0.00</span></td>
-                                </tr>
-
-                                <tr>
-                                    <td>Consertos</td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control"
-                                            id="consertos-segunda"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control"
-                                            id="consertos-terca"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control"
-                                            id="consertos-quarta"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control"
-                                            id="consertos-quinta"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control"
-                                            id="consertos-sexta"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control"
-                                            id="consertos-sabado"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control"
-                                            id="consertos-domingo"
-                                            step="0.01"></td>
-                                    <td class="text-center"><span
-                                            id="total-consertos">0.00</span>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>Diarista</td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control"
-                                            id="diarista-segunda"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="diarista-terca"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control"
-                                            id="diarista-quarta"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control"
-                                            id="diarista-quinta"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="diarista-sexta"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control"
-                                            id="diarista-sabado"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control"
-                                            id="diarista-domingo"
-                                            step="0.01"></td>
-                                    <td class="text-center"><span
-                                            id="total-diarista">0.00</span>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>Doações</td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control"
-                                            id="doacoes-segunda"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="doacoes-terca"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="doacoes-quarta"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="doacoes-quinta"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="doacoes-sexta"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="doacoes-sabado"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control"
-                                            id="doacoes-domingo"
-                                            step="0.01"></td>
-                                    <td class="text-center"><span id="total-doacoes">0.00</span>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>Estacionamento</td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control"
-                                            id="estacionamento-segunda"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control"
-                                            id="estacionamento-terca"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control"
-                                            id="estacionamento-quarta"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control"
-                                            id="estacionamento-quinta"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control"
-                                            id="estacionamento-sexta"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control"
-                                            id="estacionamento-sabado"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control"
-                                            id="estacionamento-domingo"
-                                            step="0.01"></td>
-                                    <td class="text-center"><span
-                                            id="total-estacionamento">0.00</span></td>
-                                </tr>
-
-                                <tr>
-                                    <td>Farmácia e perfumaria</td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control"
-                                            id="farmacia-segunda"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="farmacia-terca"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control"
-                                            id="farmacia-quarta"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control"
-                                            id="farmacia-quinta"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="farmacia-sexta"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control"
-                                            id="farmacia-sabado"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control"
-                                            id="farmacia-domingo"
-                                            step="0.01"></td>
-                                    <td class="text-center"><span
-                                            id="total-farmacia">0.00</span>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>Feira</td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="feira-segunda"
-                                            step="0.01"></td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="feira-terca"
-                                            step="0.01">
-                                    </td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="feira-quarta"
-                                            step="0.01">
-                                    </td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="feira-quinta"
-                                            step="0.01">
-                                    </td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="feira-sexta"
-                                            step="0.01">
-                                    </td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="feira-sabado"
-                                            step="0.01">
-                                    </td>
-                                    <td class="text-center"><input type="number"
-                                            class="form-control" id="feira-domingo"
-                                            step="0.01"></td>
-                                    <td class="text-center"><span id="total-feira">0.00</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-        </div>
-        <!-- Modal de Feedback Positivo -->
-        <div class="modal fade" id="modalFeedbackPositivo" tabindex="-1"
-            role="dialog"
-            aria-labelledby="modalFeedbackPositivoLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modalFeedbackPositivoLabel">Parabéns!</h5>
-                        <button type="button" class="btn-close"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        Você acertou! Esse valor corresponde à despesa.
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary"
-                            data-bs-dismiss="modal">Close</button>
+                    <div class="footer-mesa">
+                        <button class="btn btn-comecar animacao w-75"> Começar </button>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Modal de Feedback Negativo -->
-        <div class="modal fade" id="modalFeedbackNegativo" tabindex="-1"
-            role="dialog"
-            aria-labelledby="modalFeedbackNegativoLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modalFeedbackNegativoLabel">Ops!
-                            Tente novamente
-                        </h5>
-                        <button type="button" class="btn-close"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        Você não escolheu a despesa ou o dia correto. Tente
-                        novamente.
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary"
-                            data-bs-dismiss="modal">Close</button>
-                    </div>
+            <div class="conteudo-controle-gastos">
+                <div class="bg-mesa position-relative">
+                    <img class="img-fluid" src="assets/img/bg-conteudo.png" alt="mesa escritório com objetos">
+                </div>
+                <div class="conteudo-controle position-absolute">
+                    <button class="btn animacao organiza"> Clique para organizar</button>
+                </div>
+            </div>
+
+            <div class="final-controle-gastos d-none">
+                <div class="bg-mesa"><img src alt></div>
+                <div class="intro-controle">
+                    <p class="text-final-fiscal"></p>
+                    <button class="btn btn-fechar"></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="lancamento d-none">
+            <div class="planilha-gastos">
+                <h2 class="mt-3 mb-3">​Controle de gastos pessoais diários</h2>
+                <h3>Semana de 04/04 a 08/04 de 2022 </h3>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-responsive-md">
+                        <thead>
+                            <tr>
+                                <th scope="col">Despesa</th>
+                                <th scope="col" class="text-center">Segunda</th>
+                                <th scope="col" class="text-center">Terça</th>
+                                <th scope="col" class="text-center">Quarta</th>
+                                <th scope="col" class="text-center">Quinta</th>
+                                <th scope="col" class="text-center">Sexta</th>
+                                <th scope="col" class="text-center">Sábado</th>
+                                <th scope="col" class="text-center">Domingo</th>
+                                <th scope="col" class="text-center">Total Semana</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Açougue</td>
+                                <td class="text-center"><input type="number" class="form-control" id="acougue-segunda"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="acougue-terca"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="acougue-quarta"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="acougue-quinta"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="acougue-sexta"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="acougue-sabado"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="acougue-domingo"
+                                        step="0.01"></td>
+                                <td class="text-center"><span id="total-acougue">0.00</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Almoços</td>
+                                <td class="text-center"><input type="number" class="form-control" id="almocos-segunda"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="almocos-terca"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="almocos-quarta"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="almocos-quinta"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="almocos-sexta"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="almocos-sabado"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="almocos-domingo"
+                                        step="0.01"></td>
+                                <td class="text-center"><span id="total-almocos">0.00</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Café e afins</td>
+                                <td class="text-center"><input type="number" class="form-control" id="cafe-segunda"
+                                        step="0.01">
+                                </td>
+                                <td class="text-center"><input type="number" class="form-control" id="cafe-terca"
+                                        step="0.01">
+                                </td>
+                                <td class="text-center"><input type="number" class="form-control" id="cafe-quarta"
+                                        step="0.01">
+                                </td>
+                                <td class="text-center"><input type="number" class="form-control" id="cafe-quinta"
+                                        step="0.01">
+                                </td>
+                                <td class="text-center"><input type="number" class="form-control" id="cafe-sexta"
+                                        step="0.01">
+                                </td>
+                                <td class="text-center"><input type="number" class="form-control" id="cafe-sabado"
+                                        step="0.01">
+                                </td>
+                                <td class="text-center"><input type="number" class="form-control" id="cafe-domingo"
+                                        step="0.01">
+                                </td>
+                                <td class="text-center"><span id="total-cafe">0.00</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Cinema</td>
+                                <td class="text-center"><input type="number" class="form-control" id="cinema-segunda"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="cinema-terca"
+                                        step="0.01">
+                                </td>
+                                <td class="text-center"><input type="number" class="form-control" id="cinema-quarta"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="cinema-quinta"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="cinema-sexta"
+                                        step="0.01">
+                                </td>
+                                <td class="text-center"><input type="number" class="form-control" id="cinema-sabado"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="cinema-domingo"
+                                        step="0.01"></td>
+                                <td class="text-center"><span id="total-cinema">0.00</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Consertos</td>
+                                <td class="text-center"><input type="number" class="form-control" id="consertos-segunda"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="consertos-terca"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="consertos-quarta"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="consertos-quinta"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="consertos-sexta"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="consertos-sabado"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="consertos-domingo"
+                                        step="0.01"></td>
+                                <td class="text-center"><span id="total-consertos">0.00</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Diarista</td>
+                                <td class="text-center"><input type="number" class="form-control" id="diarista-segunda"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="diarista-terca"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="diarista-quarta"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="diarista-quinta"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="diarista-sexta"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="diarista-sabado"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="diarista-domingo"
+                                        step="0.01"></td>
+                                <td class="text-center"><span id="total-diarista">0.00</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Doações</td>
+                                <td class="text-center"><input type="number" class="form-control" id="doacoes-segunda"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="doacoes-terca"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="doacoes-quarta"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="doacoes-quinta"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="doacoes-sexta"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="doacoes-sabado"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="doacoes-domingo"
+                                        step="0.01"></td>
+                                <td class="text-center"><span id="total-doacoes">0.00</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Estacionamento</td>
+                                <td class="text-center"><input type="number" class="form-control"
+                                        id="estacionamento-segunda" step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control"
+                                        id="estacionamento-terca" step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control"
+                                        id="estacionamento-quarta" step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control"
+                                        id="estacionamento-quinta" step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control"
+                                        id="estacionamento-sexta" step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control"
+                                        id="estacionamento-sabado" step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control"
+                                        id="estacionamento-domingo" step="0.01"></td>
+                                <td class="text-center"><span id="total-estacionamento">0.00</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Farmácia e perfumaria</td>
+                                <td class="text-center"><input type="number" class="form-control" id="farmacia-segunda"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="farmacia-terca"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="farmacia-quarta"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="farmacia-quinta"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="farmacia-sexta"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="farmacia-sabado"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="farmacia-domingo"
+                                        step="0.01"></td>
+                                <td class="text-center"><span id="total-farmacia">0.00</span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Feira</td>
+                                <td class="text-center"><input type="number" class="form-control" id="feira-segunda"
+                                        step="0.01"></td>
+                                <td class="text-center"><input type="number" class="form-control" id="feira-terca"
+                                        step="0.01">
+                                </td>
+                                <td class="text-center"><input type="number" class="form-control" id="feira-quarta"
+                                        step="0.01">
+                                </td>
+                                <td class="text-center"><input type="number" class="form-control" id="feira-quinta"
+                                        step="0.01">
+                                </td>
+                                <td class="text-center"><input type="number" class="form-control" id="feira-sexta"
+                                        step="0.01">
+                                </td>
+                                <td class="text-center"><input type="number" class="form-control" id="feira-sabado"
+                                        step="0.01">
+                                </td>
+                                <td class="text-center"><input type="number" class="form-control" id="feira-domingo"
+                                        step="0.01"></td>
+                                <td class="text-center"><span id="total-feira">0.00</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <!-- Modal de Feedback Positivo -->
+    <div class="modal fade" id="modalFeedbackPositivo" tabindex="-1" role="dialog"
+        aria-labelledby="modalFeedbackPositivoLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalFeedbackPositivoLabel">Parabéns!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Você acertou! Esse valor corresponde à despesa.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Versao atual do handtalk -->
+    <!-- Modal de Feedback Negativo -->
+    <div class="modal fade" id="modalFeedbackNegativo" tabindex="-1" role="dialog"
+        aria-labelledby="modalFeedbackNegativoLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalFeedbackNegativoLabel">Ops!
+                        Tente novamente
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Você não escolheu a despesa ou o dia correto. Tente
+                    novamente.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <script>
-var scriptElem = document.createElement("script");
-scriptElem.src = "https://plugin.handtalk.me/web/latest/handtalk.min.js",
-scriptElem.charset = "UTF-8",
-scriptElem.onload = function () {
-window.ht = new HT({
-token: "bf5b7efb148a829a126a0e0c9fd533bf",
-align: "top",
-videoEnabled: true,
-ytEmbedReplace: true,
-mobileConfig: {
-align: "right",
-actionsAlign: "top",
-customButtonStyle: {
-borderRadius: "6px",
-size: "38px",
-horizontalMargin: "13px",
-bottomMargin: "140px",
-rightMargin: "40px"
-}
-}
-});
-$('.ht-skip').attr("aria-hidden", "true")
-},
-document.body.appendChild(scriptElem);
-</script>
-        <script>
-window.addEventListener("load", AOS.refresh);
-</script>
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-            crossorigin="anonymous">
-</script>
-        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-        <script src="assets/js/script.js"></script>
-    </body>
+    <!-- Versao atual do handtalk -->
+
+    <script>
+        var scriptElem = document.createElement("script");
+        scriptElem.src = "https://plugin.handtalk.me/web/latest/handtalk.min.js",
+            scriptElem.charset = "UTF-8",
+            scriptElem.onload = function () {
+                window.ht = new HT({
+                    token: "bf5b7efb148a829a126a0e0c9fd533bf",
+                    align: "top",
+                    videoEnabled: true,
+                    ytEmbedReplace: true,
+                    mobileConfig: {
+                        align: "right",
+                        actionsAlign: "top",
+                        customButtonStyle: {
+                            borderRadius: "6px",
+                            size: "38px",
+                            horizontalMargin: "13px",
+                            bottomMargin: "140px",
+                            rightMargin: "40px"
+                        }
+                    }
+                });
+                $('.ht-skip').attr("aria-hidden", "true")
+            },
+            document.body.appendChild(scriptElem);
+    </script>
+    <script>
+        window.addEventListener("load", AOS.refresh);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
 
 </html>
