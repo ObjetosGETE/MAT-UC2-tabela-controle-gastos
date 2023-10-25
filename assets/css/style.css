@@ -101,7 +101,64 @@
     }
 }
 
+.conteudo-controle-organizado {
+	top: 660px;
+	left: 122px;
+}
 
+.notinhas:hover{
+transform: scale(1.1);
+}
+
+
+.final-controle-gastos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.final-controle.position-absolute {
+    background-color: white;
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px #333;
+}
+
+.header-final-controle {
+    background-color: #5C7309;
+    border-radius: 10px;
+    font-size: 36px;
+    font-family: 'Comic Neue', cursive;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 2px 2px 15px #333;
+    color: white;
+}
+
+.text-final-fiscal {
+    font-size: 30px;
+    font-family: 'Calibri';
+    color: #333 !important;
+}
+
+.btn.btn-planilha {
+    display: inline-block;
+    border: 5px solid black;
+    background-color: #F2D39A;
+    font-size: 36px;
+    font-family: 'Comic Neue', cursive;
+    font-weight: bold;
+    padding: 2%;
+    border-radius: 10px;
+    margin: 4%;
+    padding-inline: 10%;
+    text-transform: uppercase;
+}
+
+.btn-planilha:hover{
+    transform: scale(1.1);
+    }
+    
 
 .planilha-gastos {
     width: 100%;
