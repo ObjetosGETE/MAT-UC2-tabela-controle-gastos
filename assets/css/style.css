@@ -42,6 +42,10 @@
     text-align: center;
 }
 
+/* .custom-cursor{
+    cursor: url('../img/mao-clique.png'), auto !important;
+} */
+
 .btn.btn-comecar {
     display: inline-block;
     border: 5px solid black;
@@ -102,12 +106,12 @@
 }
 
 .conteudo-controle-organizado {
-	top: 660px;
-	left: 122px;
+    top: 660px;
+    left: 122px;
 }
 
-.notinhas:hover{
-transform: scale(1.1);
+.notinhas:hover {
+    transform: scale(1.1);
 }
 
 
@@ -155,13 +159,86 @@ transform: scale(1.1);
     text-transform: uppercase;
 }
 
-.btn-planilha:hover{
+.btn-planilha:hover {
     transform: scale(1.1);
-    }
-    
+}
 
-.planilha-gastos {
-    width: 100%;
-    margin: 1%;
+.head-coluna-gastos {
+    background-color: #F8A618;
+    border: 5px solid black;
+    font-size: 36px;
+    font-family: 'Comic Neue', cursive;
+    font-weight: bold;
+}
+
+.h4-planilha {
+    font-size: 18px;
+}
+
+.bordinha {
+    border: 5px solid black;
+}
+
+.thead-planilha {
+    background-color: #F2D39A;
+    font-weight: bold;
+}
+
+.td-planilha {
+    background-color: #ffecc6 !important;
+    font-weight: bold;
+}
+
+.mao {
+    width: 29%;
+    top: 9px;
+    left: 1384px;
+}
+
+.t-nota {
+    top: 258px;
+    font-size: 27px;
+    left: 142px;
+    transform: rotate(5deg);
+    font-family: 'Century';
+}
+
+.btn-fechar {
+    display: inline-block;
+    border: 5px solid black;
+    background-color: #F8A618;
+    font-size: 23px;
+    font-family: 'Comic Neue', cursive;
+    font-weight: bold;
     padding: 1%;
+    border-radius: 10px;
+    margin: 2%;
+    padding-inline: 3%;
+    text-transform: uppercase;
+    top: 614px;
+    left: 280px;
+}
+
+.btn-fechar:hover {
+    transform: scale(1.1);
+}
+
+.seta-esquerda {
+    width: 130px;
+    top: 600px;
+    left: 60px;
+}
+
+.seta-esquerda:hover {
+    transform: scale(1.1);
+}
+
+.seta-direita {
+    width: 130px;
+    top: 614px;
+    left: 154px;
+}
+
+.seta-direita:hover {
+    transform: scale(1.1);
 }
