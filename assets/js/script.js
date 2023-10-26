@@ -37,6 +37,13 @@ function resizeBodyConteudo() {
     }
 }
 
+function somClique() {
+    $("body").on("click", '.som-clique', function () {
+      var audio = new Audio('assets/audio/clique.mp3');
+      audio.play();
+    });
+  }
+
 $(document).ready(function () {
 
     resizeBodyConteudo()
@@ -68,5 +75,7 @@ $(document).ready(function () {
     verificarValor('#acougue-sexta', 20.00);
     verificarValor('#acougue-sabado', 20.00);
     verificarValor('#acougue-domingo', 20.00);
+
+    somClique()
 });
 

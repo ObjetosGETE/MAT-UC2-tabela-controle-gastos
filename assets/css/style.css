@@ -18,13 +18,13 @@
 .intro-controle.position-absolute {
     background-color: white;
     width: 50%;
-    border-radius: 10px;
+    border-radius: 9px;
     box-shadow: 10px 10px 10px #333;
 }
 
 .header-intro-controle {
     background-color: #F2D39A;
-    border-radius: 10px;
+    border-radius: 9px;
     font-size: 36px;
     font-family: 'Comic Neue', cursive;
     font-weight: bold;
@@ -48,13 +48,13 @@
 
 .btn.btn-comecar {
     display: inline-block;
-    border: 5px solid black;
+    border: 4px solid black;
     background-color: #F8A618;
     font-size: 36px;
     font-family: 'Comic Neue', cursive;
     font-weight: bold;
     padding: 2%;
-    border-radius: 10px;
+    border-radius: 9px;
     margin: 4%;
     padding-inline: 10%;
     text-transform: uppercase;
@@ -73,13 +73,13 @@
 
 .organiza {
     display: inline-block;
-    border: 5px solid black;
+    border: 4px solid black;
     background-color: #C5D93A;
     font-size: 36px;
     font-family: 'Comic Neue', cursive;
     font-weight: bold;
     padding: 4%;
-    border-radius: 10px;
+    border-radius: 9px;
     margin: 4%;
     padding-inline: 10%;
     text-transform: uppercase;
@@ -147,7 +147,7 @@
 
 .btn.btn-planilha {
     display: inline-block;
-    border: 5px solid black;
+    border: 4px solid black;
     background-color: #F2D39A;
     font-size: 36px;
     font-family: 'Comic Neue', cursive;
@@ -165,7 +165,7 @@
 
 .head-coluna-gastos {
     background-color: #F8A618;
-    border: 5px solid black;
+    border: 4px solid black;
     font-size: 36px;
     font-family: 'Comic Neue', cursive;
     font-weight: bold;
@@ -176,7 +176,7 @@
 }
 
 .bordinha {
-    border: 5px solid black;
+    border: 4px solid black;
 }
 
 .thead-planilha {
@@ -205,22 +205,24 @@
 
 .btn-fechar {
     display: inline-block;
-    border: 5px solid black;
+    border: 4px solid black;
     background-color: #F8A618;
-    font-size: 23px;
+    font-size: 20px;
     font-family: 'Comic Neue', cursive;
     font-weight: bold;
-    padding: 1%;
-    border-radius: 10px;
-    margin: 2%;
+    border-radius: 9px;
+    margin: 1%;
     padding-inline: 3%;
     text-transform: uppercase;
-    top: 614px;
-    left: 280px;
+}
+
+#fecha-tabela {
+    top: 621px;
+    left: 300px;
 }
 
 .btn-fechar:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
 .seta-esquerda {
@@ -230,7 +232,7 @@
 }
 
 .seta-esquerda:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
 .seta-direita {
@@ -240,5 +242,38 @@
 }
 
 .seta-direita:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
+}
+
+.circulo {
+    width: 110px;
+    height: 110px;
+    top: 122px;
+    left: 271px;
+    background-image: url('../img/circulo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.ordem-numerica {
+    font-size: 29px;
+    top: 38px;
+    left: 20px;
+    font-family: 'Comic Neue', cursive;
+}
+
+.header-modal-positivo {
+    background-color: #5C7309;
+    font-family: 'Comic Neue', cursive;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+}
+
+.header-modal-negativo {
+    background-color: #731009;
+    font-family: 'Comic Neue', cursive;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
 }
