@@ -102,10 +102,10 @@ $(document).ready(function () {
         ordem: "1/27"
       },
       {
-        empresa: "Padaria Bom&Cia",
+        empresa: "Restaurante da Flor",
         diaSemana: "TERÇA-FEIRA",
-        descricao: "Pão de forma",
-        valor: "R$21,59",
+        descricao: "Almoço",
+        valor: "R$29,90",
         ordem: "2/27"
       },
       {
@@ -113,36 +113,182 @@ $(document).ready(function () {
         diaSemana: "QUARTA-FEIRA",
         descricao: "Bolo",
         valor: "R$12,27",
-        ordem: "2/27"
+        ordem: "3/27"
       },
       {
         empresa: "Padaria Bom&Cia",
         diaSemana: "QUINTA-FEIRA",
         descricao: "Pão caseiro",
         valor: "R$11,46",
-        ordem: "2/27"
+        ordem: "4/27"
+      },
+      {
+        empresa: "Açougue Boi de Ouro",
+        diaSemana: "SEGUNDA-FEIRA",
+        descricao: "Carne",
+        valor: "R$51,50",
+        ordem: "5/27"
       },
       {
         empresa: "Padaria Bom&Cia",
         diaSemana: "SEXTA-FEIRA",
         descricao: "Cuca",
         valor: "R$10,62",
-        ordem: "2/27"
+        ordem: "6/27"
       },
       {
         empresa: "Padaria Bom&Cia",
         diaSemana: "SÁBADO",
         descricao: "Pão e bolo",
         valor: "R$16,10",
-        ordem: "2/27"
+        ordem: "7/27"
       },
       {
         empresa: "Padaria Bom&Cia",
         diaSemana: "DOMINGO",
         descricao: "Pão de forma",
         valor: "R$13,42",
-        ordem: "2/27"
+        ordem: "8/27"
       },
+      {
+        empresa: "Transportes Banzo",
+        diaSemana: "SEGUNDA-FEIRA",
+        descricao: "Passagens de ônibus",
+        valor: "R$10,50",
+        ordem: "9/27"
+      },
+      {
+        empresa: "Açougue Boi de Ouro",
+        diaSemana: "QUARTA-FEIRA",
+        descricao: "Frango",
+        valor: "R$32,27",
+        ordem: "10/27"
+      },
+      {
+        empresa: "Açougue Boi de Ouro",
+        diaSemana: "QUINTA-FEIRA",
+        descricao: "Picanha",
+        valor: "R$46,90",
+        ordem: "11/27"
+      },
+      {
+        empresa: "Açougue Boi de Ouro",
+        diaSemana: "SÁBADO",
+        descricao: "Carne",
+        valor: "R$160,42",
+        ordem: "12/27"
+      },
+
+     
+      {
+        empresa: "Transportes Banzo",
+        diaSemana: "TERÇA-FEIRA",
+        descricao: "Passagens de ônibus",
+        valor: "R$10,50",
+        ordem: "13/27"
+      },
+      {
+        empresa: "Transportes Banzo",
+        diaSemana: "QUARTA-FEIRA",
+        descricao: "Passagens de ônibus",
+        valor: "R$10,50",
+        ordem: "14/27"
+      },
+      
+      {
+        empresa: "Transportes Banzo",
+        diaSemana: "SEXTA-FEIRA",
+        descricao: "Passagens de ônibus",
+        valor: "R$10,50",
+        ordem: "15/27"
+      },
+      {
+        empresa: "Cinema Lazer",
+        diaSemana: "SÁBADO",
+        descricao: "Filme e Pipoca",
+        valor: "R$56,00",
+        ordem: "16/27"
+      },
+      {
+        empresa: "Restaurante da Flor",
+        diaSemana: "SEGUNDA-FEIRA",
+        descricao: "Almoço",
+        valor: "R$29,90",
+        ordem: "17/27"
+      },
+      {
+        empresa: "Padaria Bom&Cia",
+        diaSemana: "TERÇA-FEIRA",
+        descricao: "Pão de forma",
+        valor: "R$21,59",
+        ordem: "18/27"
+      }, 
+      {
+        empresa: "Restaurante da Flor",
+        diaSemana: "QUARTA-FEIRA",
+        descricao: "Almoço",
+        valor: "R$29,90",
+        ordem: "19/27"
+      },
+      {
+        empresa: "Restaurante da Flor",
+        diaSemana: "QUINTA-FEIRA",
+        descricao: "Almoço",
+        valor: "R$29,90",
+        ordem: "20/27"
+      },
+      {
+        empresa: "Restaurante da Flor",
+        diaSemana: "SEXTA-FEIRA",
+        descricao: "Almoço",
+        valor: "R$29,90",
+        ordem: "21/27"
+      },
+      {
+        empresa: "Café Bem&Cia",
+        diaSemana: "SÁBADO",
+        descricao: "Lanche da tarde",
+        valor: "R$25,70",
+        ordem: "22/27"
+      },
+
+      {
+        empresa: "Transportes Banzo",
+        diaSemana: "QUINTA-FEIRA",
+        descricao: "Passagens de ônibus",
+        valor: "R$10,50",
+        ordem: "23/27"
+      },
+      {
+        empresa: "Café Bem&Cia",
+        diaSemana: "DOMINGO",
+        descricao: "Lanche da tarde",
+        valor: "R$32,50",
+        ordem: "24/27"
+      },
+      {
+        empresa: "Farmácia São João",
+        diaSemana: "SEGUNDA-FEIRA",
+        descricao: "Remédios",
+        valor: "R$130,50",
+        ordem: "25/27"
+      },
+      
+      {
+        empresa: "Baile da Alegria",
+        diaSemana: "DOMINGO",
+        descricao: "Festa e drinks",
+        valor: "R$130,25",
+        ordem: "26/27"
+      },
+      {
+        empresa: "Feira Orgânica",
+        diaSemana: "QUARTA-FEIRA",
+        descricao: "Legumes",
+        valor: "R$92,72",
+        ordem: "27/27"
+      },
+     
      
     ];
 
