@@ -93,6 +93,91 @@ function calculoSemanal() {
 
 
 $(document).ready(function () {
+    var cupons = [
+      {
+        empresa: "Padaria Bom&Cia",
+        diaSemana: "SEGUNDA-FEIRA",
+        descricao: "Cuca",
+        valor: "R$10,50",
+        ordem: "1/27"
+      },
+      {
+        empresa: "Padaria Bom&Cia",
+        diaSemana: "TERÇA-FEIRA",
+        descricao: "Pão de forma",
+        valor: "R$21,59",
+        ordem: "2/27"
+      },
+      {
+        empresa: "Padaria Bom&Cia",
+        diaSemana: "QUARTA-FEIRA",
+        descricao: "Bolo",
+        valor: "R$12,27",
+        ordem: "2/27"
+      },
+      {
+        empresa: "Padaria Bom&Cia",
+        diaSemana: "QUINTA-FEIRA",
+        descricao: "Pão caseiro",
+        valor: "R$11,46",
+        ordem: "2/27"
+      },
+      {
+        empresa: "Padaria Bom&Cia",
+        diaSemana: "SEXTA-FEIRA",
+        descricao: "Cuca",
+        valor: "R$10,62",
+        ordem: "2/27"
+      },
+      {
+        empresa: "Padaria Bom&Cia",
+        diaSemana: "SÁBADO",
+        descricao: "Pão e bolo",
+        valor: "R$16,10",
+        ordem: "2/27"
+      },
+      {
+        empresa: "Padaria Bom&Cia",
+        diaSemana: "DOMINGO",
+        descricao: "Pão de forma",
+        valor: "R$13,42",
+        ordem: "2/27"
+      },
+     
+    ];
+
+    var currentCupomIndex = 0;
+
+    function exibirCupom(index) {
+      var cupom = cupons[index];
+      var tNota = $(".mao .t-nota");
+      tNota.find(".nome-empresa").text(cupom.empresa);
+      tNota.find(".dia-semana").text(cupom.diaSemana);
+      tNota.find(".descricao-nota").text(cupom.descricao);
+      tNota.find(".valor-nota").text(cupom.valor);
+      tNota.find(".ordem-numerica").text(cupom.ordem);
+    }
+
+    exibirCupom(currentCupomIndex);
+
+    $(".seta-esquerda").click(function () {
+      if (currentCupomIndex > 0) {
+        currentCupomIndex--;
+        exibirCupom(currentCupomIndex);
+      }
+    });
+
+    $(".seta-direita").click(function () {
+      if (currentCupomIndex < cupons.length - 1) {
+        currentCupomIndex++;
+        exibirCupom(currentCupomIndex);
+      }
+    });
+  });
+
+
+
+$(document).ready(function () {
 
     resizeBodyConteudo()
     $(window).resize(function () {
