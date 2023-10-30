@@ -116,13 +116,91 @@ $(document).ready(function () {
         });
     }
 
+    function semValor(id, zerado) {
+        $(id).on('blur', function () {
+            var digitou = parseFloat($(this).val().replace(',', '.'));
+
+            if (isNaN(digitou)) {
+                return;
+            }
+
+            if (Math.abs(digitou - zerado) > 0.01) {
+                $('#modalFeedbackNegativo').modal('show');
+            }
+        });
+    }
+
+
+    semValor('#acougue-terca', 0.00);
+    semValor('#acougue-sexta', 0.00);
+    semValor('#acougue-domingo', 0.00);
+
+    semValor('#transporte-sabado', 0.00);
+    semValor('#transporte-domingo', 0.00);
+
+    semValor('#almoco-sabado', 0.00);
+    semValor('#almoco-domingo', 0.00);
+
+    semValor('#lanche-segunda', 0.00);
+    semValor('#lanche-terca', 0.00);
+    semValor('#lanche-quarta', 0.00);
+    semValor('#lanche-quinta', 0.00);
+    semValor('#lanche-sexta', 0.00);
+
+    semValor('#farmacia-terca', 0.00);
+    semValor('#farmacia-quarta', 0.00);
+    semValor('#farmacia-quinta', 0.00);
+    semValor('#farmacia-sexta', 0.00);
+    semValor('#farmacia-sabado', 0.00);
+    semValor('#farmacia-domingo', 0.00);
+
+    semValor('#lazer-segunda', 0.00);
+    semValor('#lazer-terca', 0.00);
+    semValor('#lazer-quarta', 0.00);
+    semValor('#lazer-quinta', 0.00);
+    semValor('#lazer-sexta', 0.00);
+
+    semValor('#feira-segunda', 0.00);
+    semValor('#feira-terca', 0.00);
+    semValor('#feira-quinta', 0.00);
+    semValor('#feira-sexta', 0.00);
+    semValor('#feira-sabado', 0.00);
+    semValor('#feira-domingo', 0.00);
+
+    verificarValor('#padaria-segunda', 10.50);
+    verificarValor('#padaria-terca', 21.59);
+    verificarValor('#padaria-quarta', 12.27);
+    verificarValor('#padaria-quinta', 11.46);
+    verificarValor('#padaria-sexta', 10.62);
+    verificarValor('#padaria-sabado', 16.10);
+    verificarValor('#padaria-domingo', 13.42);
+
     verificarValor('#acougue-segunda', 51.50);
-    verificarValor('#acougue-terca', 20.00);
-    verificarValor('#acougue-quarta', 20.00);
-    verificarValor('#acougue-quinta', 20.00);
-    verificarValor('#acougue-sexta', 20.00);
-    verificarValor('#acougue-sabado', 20.00);
-    verificarValor('#acougue-domingo', 20.00);
+    verificarValor('#acougue-quarta', 32.27);
+    verificarValor('#acougue-quinta', 46.90);
+    verificarValor('#acougue-sabado', 160.42);
+
+    verificarValor('#transporte-segunda', 10.50);
+    verificarValor('#transporte-terca', 10.50);
+    verificarValor('#transporte-quarta', 10.50);
+    verificarValor('#transporte-quinta', 10.50);
+    verificarValor('#transporte-sexta', 10.50);
+   
+    verificarValor('#almoco-segunda', 29.90);
+    verificarValor('#almoco-terca', 29.90);
+    verificarValor('#almoco-quarta', 29.90);
+    verificarValor('#almoco-quinta', 29.90);
+    verificarValor('#almoco-sexta', 29.90);
+
+    verificarValor('#lanche-sabado', 25.70);
+    verificarValor('#lanche-domingo', 32.50);
+
+    verificarValor('#farmacia-segunda', 130.50);
+
+    verificarValor('#lazer-sabado', 56.00);
+    verificarValor('#lazer-domingo', 130.25);
+
+    verificarValor('#feira-quarta', 92.72);
 
     somClique()
     controleClique();
