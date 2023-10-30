@@ -39,10 +39,58 @@ function resizeBodyConteudo() {
 
 function somClique() {
     $("body").on("click", '.som-clique', function () {
-      var audio = new Audio('assets/audio/clique.mp3');
-      audio.play();
+        var audio = new Audio('assets/audio/clique.mp3');
+        audio.play();
     });
-  }
+}
+
+function controleClique() {
+    $("#comecar-controle").click(function () {
+        $(".intro-controle-gastos").addClass("d-none");
+        $(".conteudo-controle-gastos").removeClass("d-none");
+    });
+
+    $("#organiza-nota").click(function () {
+        $(".conteudo-controle-gastos").addClass("d-none");
+        $(".conteudo-controle-organizado").removeClass("d-none");
+    });
+
+    $("#notinhas").click(function () {
+        $(".conteudo-controle-organizado").addClass("d-none");
+        $(".lancamento").removeClass("d-none");
+    });
+
+    $("#fecha-tabela").click(function () {
+        $(".lancamento").addClass("d-none");
+        $(".final-controle-gastos").removeClass("d-none");
+    });
+
+    $("#abre-planilha").click(function () {
+        $(".final-controle-gastos").addClass("d-none");
+        $(".lancamento").removeClass("d-none");
+    });
+}
+
+function calculoSemanal() {
+    $('input[type="number"]').on('input', function () {
+
+        var $row = $(this).closest('tr');
+        var totalSemana = 0;
+
+        $row.find('input[type="number"]').each(function () {
+
+            var value = parseFloat($(this).val()) || 0;
+
+            totalSemana += value;
+        });
+
+        $row.find('span').text(totalSemana.toLocaleString('pt-BR', {
+            style: 'currency',
+            currency: 'BRL'
+        }));
+    });
+}
+
 
 $(document).ready(function () {
 
@@ -77,5 +125,12 @@ $(document).ready(function () {
     verificarValor('#acougue-domingo', 20.00);
 
     somClique()
+    controleClique();
+    calculoSemanal();
 });
+
+
+
+    
+
 

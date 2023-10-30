@@ -14,7 +14,7 @@
 <body>
         <div class="conteudo">
                 <section class="mesa-notas">
-                        <div class="intro-controle-gastos d-none">
+                        <div class="intro-controle-gastos">
                                 <div class="bg-mesa position-relative"><img class="img-fluid"
                                                 src="assets/img/bg-inicial.png" alt="mesa escritório com objetos"></div>
                                 <div class="intro-controle position-absolute">
@@ -27,7 +27,8 @@
                                                         Chegou a hora de dar um destino inteligente a eles!</p>
                                         </div>
                                         <div class="footer-mesa">
-                                                <button class="btn btn-comecar animacao w-75 som-clique"> Começar
+                                                <button class="btn btn-comecar animacao w-75 som-clique"
+                                                        id="comecar-controle"> Começar
                                                 </button>
                                         </div>
                                 </div>
@@ -39,7 +40,8 @@
                                                 alt="mesa escritório com objetos">
                                 </div>
                                 <div class="conteudo-controle position-absolute">
-                                        <button class="btn animacao organiza som-clique">Clique para organizar</button>
+                                        <button class="btn animacao organiza som-clique" id="organiza-nota">Clique para
+                                                organizar</button>
                                 </div>
                         </div>
 
@@ -49,12 +51,12 @@
                                                 alt="mesa escritório com objetos">
                                 </div>
                                 <div class="conteudo-controle-organizado position-absolute">
-                                        <button class="btn notinhas som-clique"><img class="img-fluid"
+                                        <button class="btn notinhas som-clique" id="notinhas"><img class="img-fluid"
                                                         src="assets/img/notas.png" alt="cupom fiscal"></button>
                                 </div>
                         </div>
 
-                        <div class="final-controle-gastos ">
+                        <div class="final-controle-gastos d-none">
                                 <div class="bg-mesa position-relative"><img class="img-fluid"
                                                 src="assets/img/bg-final.png" alt="mesa escritório com objetos"></div>
                                 <div class="final-controle position-absolute">
@@ -70,7 +72,8 @@
                                                 </p>
                                         </div>
                                         <div class="footer-mesa">
-                                                <button class="btn btn-planilha w-75 som-clique">Planilha</button>
+                                                <button class="btn btn-planilha w-75 som-clique"
+                                                        id="abre-planilha">Planilha</button>
                                         </div>
                                 </div>
                         </div>
@@ -82,7 +85,7 @@
                                         <h2 class="p-2 h2-planilha">​Controle de gastos pessoais diários</h2>
                                         <h4 class="p-2 h4-planilha">Semana de 04/04 a 10/04 de 2022 </h4>
                                 </div>
-                                <div class="table-responsive">
+                                <div class="table-responsive fonte-input">
                                         <table class="table table-bordered table-responsive-md bordinha">
                                                 <thead class="thead-planilha">
                                                         <tr>
@@ -100,27 +103,55 @@
                                                 </thead>
                                                 <tbody>
                                                         <tr>
+                                                                <td class="td-planilha">Padaria</td>
+                                                                <td class="text-center"><input type="number"
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="padaria-segunda" step="0.01"></td>
+                                                                <td class="text-center"><input type="number"
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="padaria-terca" step="0.01"></td>
+                                                                <td class="text-center"><input type="number"
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="padaria-quarta" step="0.01"></td>
+                                                                <td class="text-center"><input type="number"
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="padaria-quinta" step="0.01"></td>
+                                                                <td class="text-center"><input type="number"
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="padaria-sexta" step="0.01"></td>
+                                                                <td class="text-center"><input type="number"
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="padaria-sabado" step="0.01"></td>
+                                                                <td class="text-center"><input type="number"
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="padaria-domingo" step="0.01"></td>
+                                                                <td class="text-center"><span
+                                                                                id="total-padaria">0.00</span>
+                                                                </td>
+                                                        </tr>
+
+                                                        <tr>
                                                                 <td class="td-planilha">Açougue</td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
                                                                                 id="acougue-segunda" step="0.01"></td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
                                                                                 id="acougue-terca" step="0.01"></td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
                                                                                 id="acougue-quarta" step="0.01"></td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
                                                                                 id="acougue-quinta" step="0.01"></td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
                                                                                 id="acougue-sexta" step="0.01"></td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
                                                                                 id="acougue-sabado" step="0.01"></td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
                                                                                 id="acougue-domingo" step="0.01"></td>
                                                                 <td class="text-center"><span
                                                                                 id="total-acougue">0.00</span>
@@ -128,237 +159,113 @@
                                                         </tr>
 
                                                         <tr>
-                                                                <td class="td-planilha">Almoços</td>
+                                                                <td class="td-planilha">Transporte</td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="almocos-segunda" step="0.01"></td>
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="transporte-segunda" step="0.01">
+                                                                </td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="almocos-terca" step="0.01"></td>
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="transporte-terca" step="0.01"></td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="almocos-quarta" step="0.01"></td>
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="transporte-quarta" step="0.01"></td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="almocos-quinta" step="0.01"></td>
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="transporte-quinta" step="0.01"></td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="almocos-sexta" step="0.01"></td>
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="transporte-sexta" step="0.01"></td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="almocos-sabado" step="0.01"></td>
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="transporte-sabado" step="0.01"></td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="almocos-domingo" step="0.01"></td>
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="transporte-domingo" step="0.01">
+                                                                </td>
                                                                 <td class="text-center"><span
-                                                                                id="total-almocos">0.00</span>
+                                                                                id="total-transporte">0.00</span>
                                                                 </td>
                                                         </tr>
 
                                                         <tr>
-                                                                <td class="td-planilha">Café e afins</td>
+                                                                <td class="td-planilha">Almoço</td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="cafe-segunda" step="0.01">
-                                                                </td>
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="almoco-segunda" step="0.01"></td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="cafe-terca" step="0.01">
-                                                                </td>
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="almoco-terca" step="0.01"></td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="cafe-quarta" step="0.01">
-                                                                </td>
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="almoco-quarta" step="0.01"></td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="cafe-quinta" step="0.01">
-                                                                </td>
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="almoco-quinta" step="0.01"></td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="cafe-sexta" step="0.01">
-                                                                </td>
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="almoco-sexta" step="0.01"></td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="cafe-sabado" step="0.01">
-                                                                </td>
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="almoco-sabado" step="0.01"></td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="cafe-domingo" step="0.01">
-                                                                </td>
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="almoco-domingo" step="0.01"></td>
                                                                 <td class="text-center"><span
-                                                                                id="total-cafe">0.00</span></td>
-                                                        </tr>
-
-                                                        <tr>
-                                                                <td class="td-planilha">Cinema</td>
-                                                                <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="cinema-segunda" step="0.01"></td>
-                                                                <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="cinema-terca" step="0.01">
-                                                                </td>
-                                                                <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="cinema-quarta" step="0.01"></td>
-                                                                <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="cinema-quinta" step="0.01"></td>
-                                                                <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="cinema-sexta" step="0.01">
-                                                                </td>
-                                                                <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="cinema-sabado" step="0.01"></td>
-                                                                <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="cinema-domingo" step="0.01"></td>
-                                                                <td class="text-center"><span
-                                                                                id="total-cinema">0.00</span></td>
-                                                        </tr>
-
-                                                        <tr>
-                                                                <td class="td-planilha">Consertos</td>
-                                                                <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="consertos-segunda" step="0.01"></td>
-                                                                <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="consertos-terca" step="0.01"></td>
-                                                                <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="consertos-quarta" step="0.01"></td>
-                                                                <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="consertos-quinta" step="0.01"></td>
-                                                                <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="consertos-sexta" step="0.01"></td>
-                                                                <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="consertos-sabado" step="0.01"></td>
-                                                                <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="consertos-domingo" step="0.01"></td>
-                                                                <td class="text-center"><span
-                                                                                id="total-consertos">0.00</span>
+                                                                                id="total-almoco">0.00</span>
                                                                 </td>
                                                         </tr>
 
                                                         <tr>
-                                                                <td class="td-planilha">Diarista</td>
+                                                                <td class="td-planilha">Lanche da tarde</td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="diarista-segunda" step="0.01"></td>
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="lanche-segunda" step="0.01"></td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="diarista-terca" step="0.01"></td>
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="lanche-terca" step="0.01"></td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="diarista-quarta" step="0.01"></td>
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="lanche-quarta" step="0.01"></td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="diarista-quinta" step="0.01"></td>
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="lanche-quinta" step="0.01"></td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="diarista-sexta" step="0.01"></td>
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="lanche-sexta" step="0.01"></td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="diarista-sabado" step="0.01"></td>
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="lanche-sabado" step="0.01"></td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="diarista-domingo" step="0.01"></td>
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="lanche-domingo" step="0.01"></td>
                                                                 <td class="text-center"><span
-                                                                                id="total-diarista">0.00</span>
+                                                                                id="total-lanche">0.00</span>
                                                                 </td>
                                                         </tr>
 
                                                         <tr>
-                                                                <td class="td-planilha">Doações</td>
+                                                                <td class="td-planilha">Farmácia</td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="doacoes-segunda" step="0.01"></td>
-                                                                <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="doacoes-terca" step="0.01"></td>
-                                                                <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="doacoes-quarta" step="0.01"></td>
-                                                                <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="doacoes-quinta" step="0.01"></td>
-                                                                <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="doacoes-sexta" step="0.01"></td>
-                                                                <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="doacoes-sabado" step="0.01"></td>
-                                                                <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="doacoes-domingo" step="0.01"></td>
-                                                                <td class="text-center"><span
-                                                                                id="total-doacoes">0.00</span>
-                                                                </td>
-                                                        </tr>
-
-                                                        <tr>
-                                                                <td class="td-planilha">Estacionamento</td>
-                                                                <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="estacionamento-segunda" step="0.01">
-                                                                </td>
-                                                                <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="estacionamento-terca" step="0.01">
-                                                                </td>
-                                                                <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="estacionamento-quarta" step="0.01">
-                                                                </td>
-                                                                <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="estacionamento-quinta" step="0.01">
-                                                                </td>
-                                                                <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="estacionamento-sexta" step="0.01">
-                                                                </td>
-                                                                <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="estacionamento-sabado" step="0.01">
-                                                                </td>
-                                                                <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="estacionamento-domingo" step="0.01">
-                                                                </td>
-                                                                <td class="text-center"><span
-                                                                                id="total-estacionamento">0.00</span>
-                                                                </td>
-                                                        </tr>
-
-                                                        <tr>
-                                                                <td class="td-planilha">Farmácia e perfumaria</td>
-                                                                <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
                                                                                 id="farmacia-segunda" step="0.01"></td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
                                                                                 id="farmacia-terca" step="0.01"></td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
                                                                                 id="farmacia-quarta" step="0.01"></td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
                                                                                 id="farmacia-quinta" step="0.01"></td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
                                                                                 id="farmacia-sexta" step="0.01"></td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
                                                                                 id="farmacia-sabado" step="0.01"></td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
                                                                                 id="farmacia-domingo" step="0.01"></td>
                                                                 <td class="text-center"><span
                                                                                 id="total-farmacia">0.00</span>
@@ -366,49 +273,74 @@
                                                         </tr>
 
                                                         <tr>
-                                                                <td class="td-planilha">Feira</td>
+                                                                <td class="td-planilha">Lazer</td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="lazer-segunda" step="0.01"></td>
+                                                                <td class="text-center"><input type="number"
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="lazer-terca" step="0.01"></td>
+                                                                <td class="text-center"><input type="number"
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="lazer-quarta" step="0.01"></td>
+                                                                <td class="text-center"><input type="number"
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="lazer-quinta" step="0.01"></td>
+                                                                <td class="text-center"><input type="number"
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="lazer-sexta" step="0.01"></td>
+                                                                <td class="text-center"><input type="number"
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="lazer-sabado" step="0.01"></td>
+                                                                <td class="text-center"><input type="number"
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="lazer-domingo" step="0.01"></td>
+                                                                <td class="text-center"><span
+                                                                                id="total-lazer">0.00</span>
+                                                                </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                                <td class="td-planilha">Feira da semana</td>
+                                                                <td class="text-center"><input type="number"
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
                                                                                 id="feira-segunda" step="0.01"></td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="feira-terca" step="0.01">
-                                                                </td>
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="feira-terca" step="0.01"></td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="feira-quarta" step="0.01">
-                                                                </td>
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="feira-quarta" step="0.01"></td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="feira-quinta" step="0.01">
-                                                                </td>
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="feira-quinta" step="0.01"></td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="feira-sexta" step="0.01">
-                                                                </td>
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="feira-sexta" step="0.01"></td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
-                                                                                id="feira-sabado" step="0.01">
-                                                                </td>
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
+                                                                                id="feira-sabado" step="0.01"></td>
                                                                 <td class="text-center"><input type="number"
-                                                                                class="form-control p-0 m-0"
+                                                                                class="form-control p-1 w-auto fonte-input m-0"
                                                                                 id="feira-domingo" step="0.01"></td>
                                                                 <td class="text-center"><span
-                                                                                id="total-feira">0.00</span></td>
+                                                                                id="total-feira">0.00</span>
+                                                                </td>
                                                         </tr>
                                                 </tbody>
                                         </table>
                                 </div>
                         </div>
                         <div class="mao position-absolute">
-                                <p class="position-absolute t-nota">
-                                        Padaria Bom&Cia<br><br>
-                                        <strong>TERÇA-FEIRA</strong><br>
-                                        Cuca <br>
-                                        <strong> Valor: R$21,59</strong>
-                                </p>
-                                <div class="circulo position-absolute"><span
-                                                class="ordem-numerica position-absolute">23/40</span></div>
+                                <div class="position-absolute t-nota">
+                                        <span class="nome-empresa"> Padaria Bom&Cia </span><br><br>
+                                        <span class="dia-semana">TERÇA-FEIRA </span>
+                                        <br>
+                                        <span class="descricao-nota">Cuca</span><br>
+                                        <span class="valor-nota">R$21,59</span>
+                                        <span class="ordem-numerica position-absolute">23/40</span>
+                                </div>
+                                <div class="circulo position-absolute"></div>
                                 <button class="btn seta-esquerda position-absolute som-clique"><img class="img-fluid"
                                                 src="assets/img/seta-esquerda.png" alt="seta esquerda">
                                 </button>
@@ -417,7 +349,7 @@
                                 </button>
                                 <button class="btn btn-fechar position-absolute som-clique"
                                         id="fecha-tabela">Fechar</button>
-                                <img src="assets/img/mao-nota.png" class="img-fluid relative"
+                                <img src="assets/img/mao-nota1.png" class="img-fluid relative"
                                         alt="mão segurando um cupom fiscal">
                         </div>
                 </section>
@@ -466,6 +398,17 @@
                                                 data-bs-dismiss="modal">fechar</button>
                                 </div>
                         </div>
+                </div>
+        </div>
+
+        <!-- força o usuário a virar a tela do celular -->
+
+        <div class="modo-smart">
+                <div class="text-center">
+                        <p class="p-paisagem text-center">
+                                <img src="assets/Img/vire.gif" class="img-fluid img-paisagem d-inline-block"><br>
+                                <strong>Por favor, gire o aparelho para o modo paisagem.</strong>
+                        </p>
                 </div>
         </div>
 
