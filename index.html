@@ -13,7 +13,7 @@
 
 <body>
         <div class="conteudo">
-                <section class="mesa-notas">
+                <divm class="mesa-notas">
                         <div class="intro-controle-gastos">
                                 <div class="bg-mesa position-relative"><img class="img-fluid"
                                                 src="assets/img/bg-inicial.png" alt="mesa escritório com objetos"></div>
@@ -51,8 +51,8 @@
                                                 alt="mesa escritório com objetos">
                                 </div>
                                 <div class="conteudo-controle-organizado position-absolute">
-                                        <button class="btn notinhas som-clique" id="notinhas"><img class="img-fluid"
-                                                        src="assets/img/notas.png" alt="cupom fiscal"></button>
+                                        <button class="btn notinhas som-clique animacao" id="notinhas">Preencher
+                                                planilha</button>
                                 </div>
                         </div>
 
@@ -77,9 +77,9 @@
                                         </div>
                                 </div>
                         </div>
-                </section>
+                </divm>
 
-                <section class="lancamento m-3 d-none">
+                <divm class="lancamento m-3 d-none">
                         <div class="planilha-gastos w-75 m-1 position-relative">
                                 <div class="head-coluna-gastos">
                                         <h2 class="p-2 h2-planilha">​Controle de gastos pessoais diários</h2>
@@ -97,7 +97,7 @@
                                                                 <th scope="col" class="text-center">Sexta</th>
                                                                 <th scope="col" class="text-center">Sábado</th>
                                                                 <th scope="col" class="text-center">Domingo</th>
-                                                                <th scope="col" class="text-center">Total Semana (R$)
+                                                                <th scope="col" class="text-center">Total (R$)
                                                                 </th>
                                                         </tr>
                                                 </thead>
@@ -341,20 +341,22 @@
                                         <span class="ordem-numerica position-absolute"></span>
                                 </div>
                                 <div class="circulo position-absolute"></div>
+                                <button type="button" class="btn-close som-clique fecha-tabela position-absolute"
+                                        id="xis" data-bs-dismiss="modal" aria-label="Close"></button>
 
-                                <button class="btn btn-fechar position-absolute som-clique"
-                                        id="fecha-tabela">Fechar</button>
-                                <button class="btn btn-validacao position-absolute som-clique"
-                                        id="validacao">Validar</button>
+                                <button class="btn btn-fechar position-absolute som-clique fecha-tabela"
+                                        id="fechar">Fechar</button>
+                                <button class="btn btn-validacao position-absolute som-clique" id="validacao">Validar
+                                        campo</button>
                                 <img src="assets/img/mao-nota1.png" class="img-fluid relative"
                                         alt="mão segurando um cupom fiscal">
                         </div>
-                </section>
+                </divm>
         </div>
 
 
         <!-- Modal de Feedback Positivo -->
-        <div class="modal fade" id="modalFeedbackPositivo" tabindex="-1" role="dialog"
+        <div class="modal fade modal-planilha" id="modalFeedbackPositivo" tabindex="-1" role="dialog"
                 aria-labelledby="modalFeedbackPositivoLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -375,7 +377,7 @@
         </div>
 
         <!-- Modal de Feedback Negativo -->
-        <div class="modal fade" id="modalFeedbackNegativo" tabindex="-1" role="dialog"
+        <div class="modal fade modal-planilha" id="modalFeedbackNegativo" tabindex="-1" role="dialog"
                 aria-labelledby="modalFeedbackNegativoLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -409,6 +411,7 @@
                 </div>
         </div>
 
+        <!-- Track: Just a Thought Music by https://www.fiftysounds.com -->
         <!-- Versao atual do handtalk -->
 
         <script>

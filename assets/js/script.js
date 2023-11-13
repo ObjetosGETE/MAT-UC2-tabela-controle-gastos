@@ -1,3 +1,6 @@
+var erro = new Audio("/assets/audio/erro.mp3");
+var acerto = new Audio("/assets/audio/acerto.mp3");
+
 function escalaProporcao(largura, altura) {
 
   var larguraScreen = $(window).width();
@@ -60,7 +63,7 @@ function controleClique() {
     $(".lancamento").removeClass("d-none");
   });
 
-  $("#fecha-tabela").click(function () {
+  $(".fecha-tabela").click(function () {
     $(".lancamento").addClass("d-none");
     $(".conteudo-controle-organizado").removeClass("d-none");
   });
@@ -300,27 +303,53 @@ $(document).ready(function () {
   }
 
   function verificarValor(id, valorCorreto) {
-    $('#validacao').on('click', function () {
-      var valorDigitado = parseFloat($(id).val().replace(',', '.'));
+    $(id).on('focusout', function () {
+      var valorDigitado = parseFloat($(this).val().replace(',', '.'));
 
       if (isNaN(valorDigitado)) {
         return;
       }
 
-      if (Math.abs(valorDigitado - valorCorreto) < 0.01) {
+      if (valorDigitado === valorCorreto) {
+        acerto.play();
         $('#modalFeedbackPositivo').modal('show');
 
         if (currentCupomIndex < cupons.length - 1) {
           currentCupomIndex++;
           exibirCupom(currentCupomIndex);
         } else {
-          alert("Você já lançou todas as notas fiscais disponíveis.");
+          setTimeout(function () {
+            $(".lancamento").addClass("d-none");
+          }, 2900);
+          setTimeout(function () {
+            $(".final-controle-gastos").removeClass("d-none");
+          }, 3000);
         }
       } else {
+        erro.play();
         $('#modalFeedbackNegativo').modal('show');
       }
     });
   }
+
+  $('#validacao').prop('disabled', true);
+
+  $('input[type="number"]').on('input', function () {
+    var algumValorDigitado = false;
+
+    $('input[type="number"]').each(function () {
+      if ($(this).val() !== '') {
+        algumValorDigitado = true;
+      }
+    });
+
+    $('#validacao').prop('disabled', !algumValorDigitado);
+  });
+
+  $('.modal-planilha').on('show.bs.modal', function () {
+    $('#validacao').prop('disabled', true);
+  });
+
 
   exibirCupom(currentCupomIndex);
 
@@ -359,6 +388,8 @@ $(document).ready(function () {
 
   verificarValor('#feira-quarta', 92.72);
 
+  volumeMusica();
+
 });
 
 resizeBodyConteudo();
@@ -367,22 +398,6 @@ $(window).resize(function () {
 })
 
 $(document).ready(function () {
-  function verificarValor(id, valorCorreto) {
-
-    $('#validacao').on('click', function () {
-      var valorDigitado = parseFloat($(id).val().replace(',', '.'));
-
-      if (isNaN(valorDigitado)) {
-        return;
-      }
-
-      if (Math.abs(valorDigitado - valorCorreto) < 0.01) {
-        $('#modalFeedbackPositivo').modal('show');
-      } else {
-        $('#modalFeedbackNegativo').modal('show');
-      }
-    });
-  }
 
   function semValor(id, zerado) {
     $('#validacao').on('click', function () {
@@ -441,3 +456,4 @@ $(document).ready(function () {
   controleClique();
   calculoSemanal();
 });
+
