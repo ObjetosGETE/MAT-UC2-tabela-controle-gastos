@@ -94,7 +94,6 @@ function calculoSemanal() {
   });
 }
 
-
 $(document).ready(function () {
 
   var cupons = [{
@@ -287,7 +286,6 @@ $(document).ready(function () {
       valor: "R$92,72",
       ordem: "27/27"
     }
-
   ];
 
   var currentCupomIndex = 0;
@@ -302,34 +300,278 @@ $(document).ready(function () {
     tNota.find(".ordem-numerica").text(cupom.ordem);
   }
 
-  function verificarValor(id, valorCorreto) {
-    $(id).on('focusout', function () {
-      var valorDigitado = parseFloat($(this).val().replace(',', '.'));
+  var idsAcertados = [];
 
-      if (isNaN(valorDigitado)) {
-        return;
-      }
+  $("#validacao").on("click", function () {
+    verificarClique();
+  });
 
-      if (valorDigitado === valorCorreto) {
-        acerto.play();
-        $('#modalFeedbackPositivo').modal('show');
-
-        if (currentCupomIndex < cupons.length - 1) {
-          currentCupomIndex++;
-          exibirCupom(currentCupomIndex);
-        } else {
-          setTimeout(function () {
-            $(".lancamento").addClass("d-none");
-          }, 2900);
-          setTimeout(function () {
-            $(".final-controle-gastos").removeClass("d-none");
-          }, 3000);
-        }
-      } else {
-        erro.play();
-        $('#modalFeedbackNegativo').modal('show');
-      }
+  function verificarClique() {
+    ['#padaria-segunda', '#padaria-terca', '#padaria-quarta', '#padaria-quinta', '#padaria-sexta', '#padaria-sabado', '#padaria-domingo',
+      '#acougue-segunda', '#acougue-quarta', '#acougue-quinta', '#acougue-sabado', '#transporte-segunda', '#transporte-terca', '#transporte-quarta', '#transporte-quinta', '#transporte-sexta',
+      '#almoco-segunda', '#almoco-terca', '#almoco-quarta', '#almoco-quinta', '#almoco-sexta', '#lanche-sabado', '#lanche-domingo', '#farmacia-segunda', '#lazer-sabado', '#lazer-domingo', '#feira-quarta',
+      '#acougue-sexta', '#acougue-domingo', '#transporte-sabado', '#transporte-domingo', '#almoco-sabado', '#almoco-domingo', '#acougue-terca',
+      '#lanche-segunda', '#lanche-terca', '#lanche-quarta', '#lanche-quinta', '#lanche-sexta', '#farmacia-terca', '#farmacia-quarta', '#farmacia-quinta', '#farmacia-sexta', '#farmacia-sabado',
+      '#farmacia-domingo', '#lazer-segunda', '#lazer-terca', '#lazer-quarta', '#lazer-quinta', '#lazer-sexta', '#feira-segunda', '#feira-terca', '#feira-quinta', '#feira-sexta', '#feira-sabado', '#feira-domingo'
+    ].forEach(function (id) {
+      verificarValor(id);
     });
+  }
+
+  function verificarValor(id) {
+    if (idsAcertados.includes(id)) {
+      return;
+    }
+
+    var valorCorreto;
+
+    switch (id) {
+      // Padaria
+      case '#padaria-segunda':
+        valorCorreto = 10.50;
+        break;
+      case '#padaria-terca':
+        valorCorreto = 21.59;
+        break;
+      case '#padaria-quarta':
+        valorCorreto = 12.27;
+        break;
+      case '#padaria-quinta':
+        valorCorreto = 11.46;
+        break;
+      case '#padaria-sexta':
+        valorCorreto = 10.62;
+        break;
+      case '#padaria-sabado':
+        valorCorreto = 16.10;
+        break;
+      case '#padaria-domingo':
+        valorCorreto = 13.42;
+        break;
+
+        // Açougue
+      case '#acougue-segunda':
+        valorCorreto = 51.50;
+        break;
+      case '#acougue-quarta':
+        valorCorreto = 32.27;
+        break;
+      case '#acougue-quinta':
+        valorCorreto = 46.90;
+        break;
+      case '#acougue-sabado':
+        valorCorreto = 160.42;
+        break;
+
+        // Transporte
+      case '#transporte-segunda':
+        valorCorreto = 10.50;
+        break;
+      case '#transporte-terca':
+        valorCorreto = 10.50;
+        break;
+      case '#transporte-quarta':
+        valorCorreto = 10.50;
+        break;
+      case '#transporte-quinta':
+        valorCorreto = 10.50;
+        break;
+      case '#transporte-sexta':
+        valorCorreto = 10.50;
+        break;
+
+        // Almoço
+      case '#almoco-segunda':
+        valorCorreto = 29.90;
+        break;
+      case '#almoco-terca':
+        valorCorreto = 29.90;
+        break;
+      case '#almoco-quarta':
+        valorCorreto = 29.90;
+        break;
+      case '#almoco-quinta':
+        valorCorreto = 29.90;
+        break;
+      case '#almoco-sexta':
+        valorCorreto = 29.90;
+        break;
+
+        // Lanche
+      case '#lanche-sabado':
+        valorCorreto = 25.70;
+        break;
+      case '#lanche-domingo':
+        valorCorreto = 32.50;
+        break;
+
+        // Farmácia
+      case '#farmacia-segunda':
+        valorCorreto = 130.50;
+        break;
+
+        // Lazer
+      case '#lazer-sabado':
+        valorCorreto = 56.00;
+        break;
+      case '#lazer-domingo':
+        valorCorreto = 130.25;
+        break;
+
+        // Feira
+      case '#feira-quarta':
+        valorCorreto = 92.72;
+        break;
+
+        // Zerado
+      case '#acougue-terca':
+        valorCorreto = 0.00;
+        break;
+      case '#acougue-sexta':
+      case '#acougue-terca':
+        valorCorreto = 0.00;
+        break;
+      case '#acougue-domingo':
+      case '#acougue-terca':
+        valorCorreto = 0.00;
+        break;
+      case '#transporte-sabado':
+      case '#acougue-terca':
+        valorCorreto = 0.00;
+        break;
+      case '#transporte-domingo':
+      case '#acougue-terca':
+        valorCorreto = 0.00;
+        break;
+      case '#almoco-sabado':
+      case '#acougue-terca':
+        valorCorreto = 0.00;
+        break;
+      case '#almoco-domingo':
+      case '#acougue-terca':
+        valorCorreto = 0.00;
+        break;
+      case '#lanche-segunda':
+      case '#acougue-terca':
+        valorCorreto = 0.00;
+        break;
+      case '#lanche-terca':
+      case '#acougue-terca':
+        valorCorreto = 0.00;
+        break;
+      case '#lanche-quarta':
+      case '#acougue-terca':
+        valorCorreto = 0.00;
+        break;
+      case '#lanche-quinta':
+      case '#acougue-terca':
+        valorCorreto = 0.00;
+        break;
+      case '#lanche-sexta':
+      case '#acougue-terca':
+        valorCorreto = 0.00;
+        break;
+      case '#farmacia-terca':
+      case '#acougue-terca':
+        valorCorreto = 0.00;
+        break;
+      case '#farmacia-quarta':
+      case '#acougue-terca':
+        valorCorreto = 0.00;
+        break;
+      case '#farmacia-quinta':
+      case '#acougue-terca':
+        valorCorreto = 0.00;
+        break;
+      case '#farmacia-sexta':
+      case '#acougue-terca':
+        valorCorreto = 0.00;
+        break;
+      case '#farmacia-sabado':
+      case '#acougue-terca':
+        valorCorreto = 0.00;
+        break;
+      case '#farmacia-domingo':
+      case '#acougue-terca':
+        valorCorreto = 0.00;
+        break;
+      case '#lazer-segunda':
+      case '#acougue-terca':
+        valorCorreto = 0.00;
+        break;
+      case '#lazer-terca':
+      case '#acougue-terca':
+        valorCorreto = 0.00;
+        break;
+      case '#lazer-quarta':
+      case '#acougue-terca':
+        valorCorreto = 0.00;
+        break;
+      case '#lazer-quinta':
+      case '#acougue-terca':
+        valorCorreto = 0.00;
+        break;
+      case '#lazer-sexta':
+      case '#acougue-terca':
+        valorCorreto = 0.00;
+        break;
+      case '#feira-segunda':
+      case '#acougue-terca':
+        valorCorreto = 0.00;
+        break;
+      case '#feira-terca':
+      case '#acougue-terca':
+        valorCorreto = 0.00;
+        break;
+      case '#feira-quinta':
+      case '#acougue-terca':
+        valorCorreto = 0.00;
+        break;
+      case '#feira-sexta':
+      case '#acougue-terca':
+        valorCorreto = 0.00;
+        break;
+      case '#feira-sabado':
+      case '#acougue-terca':
+        valorCorreto = 0.00;
+        break;
+      case '#feira-domingo':
+      case '#acougue-terca':
+        valorCorreto = 0.00;
+        break;
+
+      default:
+
+        break;
+    }
+
+    var valorDigitado = parseFloat($(id).val().replace(',', '.'));
+
+    if (isNaN(valorDigitado)) {
+      return;
+    }
+
+    if (valorDigitado === valorCorreto) {
+      acerto.play();
+      $('#modalFeedbackPositivo').modal('show');
+      idsAcertados.push(id);
+
+      if (currentCupomIndex < cupons.length - 1) {
+        currentCupomIndex++;
+        exibirCupom(currentCupomIndex);
+      } else {
+        setTimeout(function () {
+          $(".lancamento").addClass("d-none");
+        }, 2900);
+        setTimeout(function () {
+          $(".final-controle-gastos").removeClass("d-none");
+        }, 3000);
+      }
+    } else {
+      erro.play();
+      $('#modalFeedbackNegativo').modal('show');
+      $(id).val('');
+    }
   }
 
   $('#validacao').prop('disabled', true);
@@ -350,110 +592,15 @@ $(document).ready(function () {
     $('#validacao').prop('disabled', true);
   });
 
-
   exibirCupom(currentCupomIndex);
-
-  verificarValor('#padaria-segunda', 10.50);
-  verificarValor('#padaria-terca', 21.59);
-  verificarValor('#padaria-quarta', 12.27);
-  verificarValor('#padaria-quinta', 11.46);
-  verificarValor('#padaria-sexta', 10.62);
-  verificarValor('#padaria-sabado', 16.10);
-  verificarValor('#padaria-domingo', 13.42);
-
-  verificarValor('#acougue-segunda', 51.50);
-  verificarValor('#acougue-quarta', 32.27);
-  verificarValor('#acougue-quinta', 46.90);
-  verificarValor('#acougue-sabado', 160.42);
-
-  verificarValor('#transporte-segunda', 10.50);
-  verificarValor('#transporte-terca', 10.50);
-  verificarValor('#transporte-quarta', 10.50);
-  verificarValor('#transporte-quinta', 10.50);
-  verificarValor('#transporte-sexta', 10.50);
-
-  verificarValor('#almoco-segunda', 29.90);
-  verificarValor('#almoco-terca', 29.90);
-  verificarValor('#almoco-quarta', 29.90);
-  verificarValor('#almoco-quinta', 29.90);
-  verificarValor('#almoco-sexta', 29.90);
-
-  verificarValor('#lanche-sabado', 25.70);
-  verificarValor('#lanche-domingo', 32.50);
-
-  verificarValor('#farmacia-segunda', 130.50);
-
-  verificarValor('#lazer-sabado', 56.00);
-  verificarValor('#lazer-domingo', 130.25);
-
-  verificarValor('#feira-quarta', 92.72);
-
-  volumeMusica();
-
-});
-
-resizeBodyConteudo();
-$(window).resize(function () {
-  resizeBodyConteudo()
-})
-
-$(document).ready(function () {
-
-  function semValor(id, zerado) {
-    $('#validacao').on('click', function () {
-      var digitou = parseFloat($(this).val().replace(',', '.'));
-
-      if (isNaN(digitou)) {
-        return;
-      }
-
-      if (Math.abs(digitou - zerado) > 0.01) {
-        $('#modalFeedbackNegativo').modal('show');
-      }
-    });
-  }
-
-
-  semValor('#acougue-terca', 0.00);
-  semValor('#acougue-sexta', 0.00);
-  semValor('#acougue-domingo', 0.00);
-
-  semValor('#transporte-sabado', 0.00);
-  semValor('#transporte-domingo', 0.00);
-
-  semValor('#almoco-sabado', 0.00);
-  semValor('#almoco-domingo', 0.00);
-
-  semValor('#lanche-segunda', 0.00);
-  semValor('#lanche-terca', 0.00);
-  semValor('#lanche-quarta', 0.00);
-  semValor('#lanche-quinta', 0.00);
-  semValor('#lanche-sexta', 0.00);
-
-  semValor('#farmacia-terca', 0.00);
-  semValor('#farmacia-quarta', 0.00);
-  semValor('#farmacia-quinta', 0.00);
-  semValor('#farmacia-sexta', 0.00);
-  semValor('#farmacia-sabado', 0.00);
-  semValor('#farmacia-domingo', 0.00);
-
-  semValor('#lazer-segunda', 0.00);
-  semValor('#lazer-terca', 0.00);
-  semValor('#lazer-quarta', 0.00);
-  semValor('#lazer-quinta', 0.00);
-  semValor('#lazer-sexta', 0.00);
-
-  semValor('#feira-segunda', 0.00);
-  semValor('#feira-terca', 0.00);
-  semValor('#feira-quinta', 0.00);
-  semValor('#feira-sexta', 0.00);
-  semValor('#feira-sabado', 0.00);
-  semValor('#feira-domingo', 0.00);
-
-
 
   somClique();
   controleClique();
   calculoSemanal();
 });
 
+
+resizeBodyConteudo();
+$(window).resize(function () {
+  resizeBodyConteudo()
+})
