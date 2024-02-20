@@ -94,6 +94,8 @@ function calculoSemanal() {
   });
 }
 
+
+
 $(document).ready(function () {
 
   var cupons = [{
@@ -592,6 +594,8 @@ $(document).ready(function () {
     $('#validacao').prop('disabled', true);
   });
 
+  
+
   exibirCupom(currentCupomIndex);
 
   somClique();
@@ -604,3 +608,5 @@ resizeBodyConteudo();
 $(window).resize(function () {
   resizeBodyConteudo()
 })
+
+

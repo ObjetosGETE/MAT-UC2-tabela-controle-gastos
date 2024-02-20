@@ -172,7 +172,7 @@
 }
 
 .p-2.h2-planilha {
-	font-size: 54px;
+    font-size: 54px;
 }
 
 .fonte-input {
@@ -311,6 +311,18 @@ th {
     left: 105px;
     font-family: 'Comic Neue', cursive;
 }
+
+.td-planilha {
+    position: sticky;
+    left: 0;
+
+}
+
+.td-planilha {
+    z-index: 1;
+}
+
+
 
 /**************************************************************************/
 /******************************* estilo modal ****************************/
